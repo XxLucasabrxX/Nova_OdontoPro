@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>OdontoPro - Página Inicial</title>
+
+  <!-- Responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonte principal -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ícones Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="Nova_inicial.css">
+</head>
+
+<body>
+
+  <!-- BOTÃO MOBILE (aparece só em telas pequenas) -->
+  <button class="sidebar-menu-button">
+    <span class="material-symbols-rounded">menu</span>
+  </button>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- HEADER DA SIDEBAR -->
+      <div class="sidebar-header">
+
+        <!-- LOGO -->
+        <div class="icon_d">
+          <img src="/img/Ativo 2@4x.png" alt="OdontoPro">
+        </div>
+
+        <!-- BOTÃO DE COLAPSAR -->
+        <button class="sidebar-toggler">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+
+      </div>
+
+      <!-- NAVEGAÇÃO -->
+      <nav class="sidebar-nav">
+
+        <!-- MENU PRINCIPAL -->
+        <ul class="nav-list primary-nav">
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-rounded">home</span>
+              <span class="nav-label">Início</span>
+            </a>
+          </li>
+
+          <!-- DROPDOWN -->
+          <li class="nav-item dropdown-container">
+            <a href="#" class="nav-link dropdown-toggle">
+              <span class="material-symbols-rounded">calendar_today</span>
+              <span class="nav-label">Agendamentos</span>
+              <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+            </a>
+
+            <!-- SUBMENU -->
+            <ul class="dropdown-menu">
+              <li><a href="#" class="nav-link dropdown-link">Novo Agendamento</a></li>
+              <li><a href="#" class="nav-link dropdown-link">Meus Agendamentos</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-rounded">favorite</span>
+              <span class="nav-label">Favoritos</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-rounded">settings</span>
+              <span class="nav-label">Configurações</span>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main">
+
+      <!-- HEADER -->
+      <header class="header">
+        <h2>Olá Gabriel 👋</h2>
+        <div class="user">
+          <span>Gabriel Gomes</span>
+          <div class="avatar"></div>
+        </div>
+      </header>
+
+      <!-- BANNER -->
+      <section class="banner">
+        <div class="banner-text">
+          <h3>Faça um Agendamento</h3>
+          <p>Crie uma conta gratuitamente agora mesmo</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1606813902912-6fef9a23a9a2" alt="Dentista">
+      </section>
+
+      <!-- CONTEÚDO -->
+      <section>
+        <div class="section-header">
+          <h4>Clínicas Disponíveis</h4>
+          <input class="search" placeholder="Procurar Clínica">
+        </div>
+
+        <div class="cards">
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5">
+            <div class="card-body">
+              <h5>Clínica Lumina</h5>
+              <div class="rating">★★★★★ 5.0</div>
+            </div>
+            <div class="card-footer">
+              <button class="btn">Saiba Mais</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- SCRIPT DA SIDEBAR -->
+  <script src="/Nova_tela/Barra.js"></script>
+
+</body>
+</html>
