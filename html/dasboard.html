@@ -2,11 +2,12 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OdontoPro - Dashboard</title>
     <link rel="stylesheet" href="../src/dasboard.css">
+    <link rel="stylesheet" href="../src/dasboardresponsivo.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="../src/dasboardresponsivo.css">
 </head>
 
 <body>
@@ -48,17 +49,13 @@
     <div class="container-principal">
         <header class="barra-topo">
             <div class="texto-boas-vindas">Olá Gabriel 👋🏼</div>
-            
             <div class="controles-usuario">
                 <button class="botao-notificacao">
                     <i class="fa-regular fa-bell"></i>
                     <span class="ponto-alerta"></span>
                 </button>
-                
                 <div class="bloco-usuario">
-                    <div class="icone-usuario-avatar">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
+                    <div class="icone-usuario-avatar"><i class="fa-solid fa-user"></i></div>
                     <div class="info-usuario">
                         <span class="nome-usuario">Gabriel Gomes</span>
                         <span class="email-usuario">gabrielgomes@gmail.com</span>
@@ -70,27 +67,69 @@
         <main class="area-conteudo">
             <section id="inicio" class="tela ativa">
                 <h2 class="titulo-pagina">Página Inicial</h2>
+                
                 <div class="container-carrossel">
-                    <div class="slide-carrossel efeito-fade"><img src="../img/Agende já sua consulta.png"></div>
-                    <div class="slide-carrossel efeito-fade"><img src="../img/Agende já sua consulta (1).png"></div>
-                    <div class="slide-carrossel efeito-fade"><img src="banner3.jpg"></div>
+                    <div class="slide-carrossel"><img src="../img/Agende já sua consulta.png"></div>
+                    <div class="slide-carrossel"><img src="../img/Agende já sua consulta (1).png"></div>
                     <div class="container-pontos">
-                        <span class="ponto"></span><span class="ponto"></span><span class="ponto"></span>
+                        <span class="ponto"></span><span class="ponto"></span>
+                    </div>
+                </div>
+
+                <div class="header-clinicas">
+                    <h2 class="titulo-pagina">Clínicas Disponíveis</h2>
+                    <div class="controles-busca">
+                        <div class="campo-busca">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Procurar Clínica" id="inputBuscaClinica">
+                        </div>
+                        <button class="btn-filtro">
+                            <i class="fa-solid fa-star"></i> Avaliação <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <button class="btn-filtro">
+                            <i class="fa-solid fa-sliders"></i> Filtros <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid-clinicas">
+                    <div class="card-clinica">
+                        <div class="banner-card">
+                            <img src="../img/Clinica 3.png" alt="Clinica Lumina">
+                            <div class="selo-verificado"><i class="fa-solid fa-check"></i></div>
+                        </div>
+                        <div class="info-card">
+                            <div class="rating-row">
+                                <span><i class="fa-solid fa-star star-yellow"></i> 4.9</span>
+                                <span class="count-reviews">320 <i class="fa-solid fa-users"></i></span>
+                            </div>
+                            <h3>Clinica Lumina</h3>
+                            <button class="btn-saiba-mais">Saiba Mais</button>
+                        </div>
+                    </div>
+
+                    <div class="card-clinica">
+                        <div class="banner-card">
+                            <img src="../img/Clinica 3.png" alt="Clinica Bem Dente">
+                            <div class="selo-verificado"><i class="fa-solid fa-check"></i></div>
+                        </div>
+                        <div class="info-card">
+                            <div class="rating-row">
+                                <span><i class="fa-solid fa-star star-yellow"></i> 4.7</span>
+                                <span class="count-reviews">175 <i class="fa-solid fa-users"></i></span>
+                            </div>
+                            <h3>Clinica Bem Dente</h3>
+                            <button class="btn-saiba-mais">Saiba Mais</button>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section id="consultas" class="tela">
-                <h2 class="titulo-pagina">Minhas Consultas</h2>
-                <p style="color: var(--texto-suave);">Não há consultas agendadas para hoje.</p>
-            </section>
-
             <section id="agenda" class="tela"><h2 class="titulo-pagina">Agenda</h2></section>
-            <section id="clinicas" class="tela"><h2 class="titulo-pagina">Nossas Clínicas</h2></section>
+            <section id="consultas" class="tela"><h2 class="titulo-pagina">Minhas Consultas</h2></section>
             <section id="ajustes" class="tela"><h2 class="titulo-pagina">Ajustes</h2></section>
         </main>
     </div>
     <script src="../JS/dasboard.js"></script>
 </body>
-
 </html>

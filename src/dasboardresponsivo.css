@@ -1,90 +1,95 @@
-@media (max-width: 992px) {
-    .menu-lateral.aberto {
-        width: 220px;
-    }
-
-    .area-conteudo {
-        padding: 20px;
-    }
-}
-
+/* Configurações para Celulares e Tablets (Até 768px) */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
-    /* Barra Inferior com Espaçamento Ajustado */
+    
+    /* 1. Transformar Menu Lateral em Barra Inferior Estilo App */
     .menu-lateral {
         width: 100% !important;
-        height: 75px;
-        flex-direction: row;
-        position: fixed;
-        bottom: 0;
-        top: auto;
-        padding: 0;
-        border-right: none;
-        border-top: 1px solid var(--cor-borda);
-        background: var(--branco);
-        z-index: 1000;
+        height: 70px !important;
+        flex-direction: row !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        top: auto !important;
+        left: 0 !important;
+        padding: 0 10px !important;
+        border-right: none !important;
+        border-top: 1px solid var(--cor-borda) !important;
+        background: var(--branco) !important;
+        z-index: 999 !important;
+        justify-content: space-around !important;
+        border-radius: 20px 20px 0 0 !important;
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.05) !important;
     }
 
-    .seccao-logo,
-    .botao-seta,
-    .legenda,
-    .botao-sair {
+    /* Esconder elementos desnecessários no mobile */
+    .seccao-logo, .botao-seta, .legenda, .botao-sair {
         display: none !important;
     }
 
     .itens-navegacao {
-        flex-direction: row;
-        width: 100%;
-        height: 100%;
-        gap: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+        flex-direction: row !important;
+        width: 100% !important;
+        margin: 0 !important;
+        justify-content: space-between !important;
+        align-items: center !important;
     }
 
-    /* Cada item agora ocupa 20% da tela (são 5 itens) */
     .item-menu {
-        flex: 1;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0;
-        background: none !important;
+        width: 55px !important;
+        height: 50px !important;
+        margin: 0 !important;
+        border-radius: 12px !important;
+        background: transparent !important;
+        color: var(--texto-suave) !important;
     }
 
-    .item-menu i {
-        font-size: 20px;
-        transition: 0.3s;
+    .item-menu.ativo {
+        background: var(--gradiente-azul) !important;
+        color: white !important;
     }
 
-    .item-menu.ativo i {
-        color: var(--azul-claro);
-        transform: translateY(-3px);
+    /* 2. Ajuste do Layout de Busca e Filtros */
+    .header-clinicas {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+        margin-top: 25px !important;
     }
 
+    .controles-busca {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Filtros lado a lado */
+        gap: 10px !important;
+    }
+
+    .campo-busca {
+        grid-column: span 2 !important; /* Barra de busca ocupa a largura toda */
+        width: 100% !important;
+        min-width: 100% !important;
+        padding: 12px 15px !important;
+    }
+
+    .btn-filtro {
+        width: 100% !important;
+        justify-content: center !important;
+        font-size: 13px !important;
+        padding: 12px 5px !important;
+        white-space: nowrap !important;
+    }
+
+    /* 3. Ajuste do Container Principal */
     .container-principal {
-        margin-bottom: 75px;
+        margin-bottom: 80px !important; /* Espaço para não esconder conteúdo atrás do nav */
     }
 
-    .barra-topo {
-        height: 70px;
-        padding: 0 20px;
+    .area-conteudo {
+        padding: 15px !important;
+        overflow-x: hidden !important;
     }
 
-    .info-usuario {
-        display: none;
-    }
-
-    .container-carrossel {
-        aspect-ratio: 16 / 9;
-        max-height: 220px;
-    }
-
-    .titulo-pagina {
-        font-size: 1.3rem;
+    /* 4. Grid de Clínicas (1 coluna no mobile) */
+    .grid-clinicas {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
     }
 }
