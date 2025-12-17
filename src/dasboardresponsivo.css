@@ -1,0 +1,90 @@
+@media (max-width: 992px) {
+    .menu-lateral.aberto {
+        width: 220px;
+    }
+
+    .area-conteudo {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    /* Barra Inferior com Espaçamento Ajustado */
+    .menu-lateral {
+        width: 100% !important;
+        height: 75px;
+        flex-direction: row;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        padding: 0;
+        border-right: none;
+        border-top: 1px solid var(--cor-borda);
+        background: var(--branco);
+        z-index: 1000;
+    }
+
+    .seccao-logo,
+    .botao-seta,
+    .legenda,
+    .botao-sair {
+        display: none !important;
+    }
+
+    .itens-navegacao {
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        gap: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    /* Cada item agora ocupa 20% da tela (são 5 itens) */
+    .item-menu {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+        background: none !important;
+    }
+
+    .item-menu i {
+        font-size: 20px;
+        transition: 0.3s;
+    }
+
+    .item-menu.ativo i {
+        color: var(--azul-claro);
+        transform: translateY(-3px);
+    }
+
+    .container-principal {
+        margin-bottom: 75px;
+    }
+
+    .barra-topo {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .info-usuario {
+        display: none;
+    }
+
+    .container-carrossel {
+        aspect-ratio: 16 / 9;
+        max-height: 220px;
+    }
+
+    .titulo-pagina {
+        font-size: 1.3rem;
+    }
+}
