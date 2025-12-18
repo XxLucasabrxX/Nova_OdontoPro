@@ -6,6 +6,7 @@
     --azul-claro: #4db8ff;
     --gradiente-azul: linear-gradient(135deg, #a5e3ff 0%, #4db8ff 100%);
     --cor-borda: #e2e8f0;
+    --verde-sucesso: #2ecc71;
 }
 
 * {
@@ -22,7 +23,9 @@ body {
     overflow: hidden;
 }
 
-/* MENU LATERAL */
+/* ==========================================
+   MENU LATERAL
+   ========================================== */
 .menu-lateral {
     width: 90px;
     background: var(--branco);
@@ -105,6 +108,7 @@ body {
     border-radius: 18px;
     cursor: pointer;
     color: var(--texto-suave);
+    transition: 0.3s;
 }
 
 .menu-lateral.aberto .item-menu {
@@ -145,7 +149,9 @@ body {
     padding-left: 38px;
 }
 
-/* TOPBAR & NOTIFICAÇÃO */
+/* ==========================================
+   TOPBAR
+   ========================================== */
 .container-principal {
     flex-grow: 1;
     display: flex;
@@ -220,6 +226,7 @@ body {
 .nome-usuario {
     font-weight: 700;
     font-size: 14px;
+    color: var(--texto-principal);
 }
 
 .email-usuario {
@@ -227,10 +234,13 @@ body {
     color: var(--texto-suave);
 }
 
-/* CONTEÚDO E BANNER */
+/* ==========================================
+   CARROSSEL & ÁREA DE CONTEÚDO
+   ========================================== */
 .area-conteudo {
     padding: 30px 40px;
     overflow-y: auto;
+    flex-grow: 1;
 }
 
 .titulo-pagina {
@@ -242,14 +252,14 @@ body {
 
 .container-carrossel {
     width: 100%;
-    aspect-ratio: 2 / 1;
-    max-height: 420px;
+    aspect-ratio: 2.5 / 1;
+    max-height: 400px;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
     background: #e0e0e0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    margin-top: 5px;
+    margin-bottom: 30px;
 }
 
 .slide-carrossel {
@@ -307,98 +317,16 @@ body {
     }
 }
 
-/* --- RESET PARA O GRID --- */
-.grid-clinicas {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
-    gap: 20px !important;
-    width: 100% !important;
-    margin-top: 20px !important;
-    clear: both !important;
-}
-
-/* --- ESTILO DO CARD --- */
-.card-clinica {
-    background: #ffffff !important;
-    border-radius: 20px !important;
-    overflow: hidden !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    border: 1px solid #e2e8f0 !important;
-}
-
-/* --- ALTURA DA IMAGEM --- */
-.banner-card {
-    width: 100% !important;
-    height: 150px !important;
-    position: relative !important;
-    display: block !important;
-}
-
-.banner-card img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-}
-
-/* --- SELO VERDE (O CHECK) --- */
-.selo-verificado {
-    position: absolute !important;
-    bottom: -15px !important;
-    left: 15px !important;
-    background: #2ecc71 !important;
-    color: #fff !important;
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border: 3px solid #ffffff !important;
-    z-index: 10 !important;
-}
-
-/* --- TEXTOS INTERNOS --- */
-.info-card {
-    padding: 25px 15px 15px !important;
-}
-
-.info-card h3 {
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    margin-top: 10px !important;
-    color: #313131 !important;
-}
-
-.rating-row {
-    display: flex !important;
-    justify-content: space-between !important;
-    font-size: 12px !important;
-    color: #6C7293 !important;
-}
-
-/* --- BOTÃO VERDE --- */
-.btn-saiba-mais {
-    background-color: #2ecc71 !important;
-    color: #ffffff !important;
-    border: none !important;
-    padding: 12px !important;
-    border-radius: 10px !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
-    width: 100% !important;
-    margin-top: 15px !important;
-    display: block !important;
-}
-
+/* ==========================================
+   HEADER DE CLÍNICAS (BUSCA E FILTRO)
+   ========================================== */
 .header-clinicas {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 0 20px 0;
-    flex-wrap: wrap;
+    margin-bottom: 25px;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .controles-busca {
@@ -407,22 +335,17 @@ body {
     gap: 12px;
 }
 
-/* --- CAMPO DE BUSCA (INPUT) --- */
 .campo-busca {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    padding: 10px 15px;
+    background: var(--branco);
+    border: 1px solid var(--cor-borda);
+    padding: 0 15px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     gap: 10px;
-    min-width: 250px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-}
-
-.campo-busca i {
-    color: #A0AEC0;
-    font-size: 14px;
+    min-width: 280px;
+    height: 48px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
 }
 
 .campo-busca input {
@@ -431,31 +354,174 @@ body {
     background: transparent;
     font-size: 14px;
     width: 100%;
-    color: #313131;
+    color: var(--texto-principal);
 }
 
-/* --- BOTÕES DE FILTRO --- */
 .btn-filtro {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    padding: 10px 18px;
+    background: var(--branco);
+    border: 1px solid var(--cor-borda);
+    padding: 0 18px;
+    height: 48px;
     border-radius: 12px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    color: #4A5568;
+    color: var(--texto-suave);
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .btn-filtro:hover {
-    background: #f7fafc;
+    background: #f8fafc;
     border-color: #cbd5e0;
 }
 
-.btn-filtro i:last-child {
+/* ==========================================
+   GRID E CARDS DE CLÍNICAS
+   ========================================== */
+.grid-clinicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card-clinica {
+    background: var(--branco);
+    border-radius: 20px;
+    overflow: visible;
+    /* IMPORTANTE: Permite que a foto de perfil "flutue" */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--cor-borda);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-clinica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.banner-card {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    /* Corta apenas a imagem interna */
+}
+
+.fundo-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.perfil-clinica-container {
+    position: absolute;
+    bottom: -25px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+}
+
+.foto-perfil-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid var(--branco);
+    background: white;
+    object-fit: contain;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.selo-verificado-pequeno {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--verde-sucesso);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 10px;
-    margin-left: 5px;
+    border: 2px solid var(--branco);
+}
+
+.info-card {
+    padding: 35px 20px 20px;
+    /* Padding superior compensa o ícone flutuante */
+}
+
+.info-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--texto-principal);
+    margin-bottom: 15px;
+}
+
+.rating-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.star-yellow {
+    color: #FFB800;
+}
+
+.user-stats {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.mini-avatar {
+    width: 24px;
+    height: 24px;
+    background: #DDE2EE;
+    border-radius: 50%;
+    border: 2px solid var(--branco);
+    margin-left: -10px;
+}
+
+.mini-avatar:first-child {
+    margin-left: 0;
+}
+
+.btn-saiba-mais {
+    background: var(--verde-sucesso);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-saiba-mais:hover {
+    background: #27ae60;
 }
