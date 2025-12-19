@@ -9,11 +9,13 @@
     --verde-sucesso: #2ecc71;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif; 
 }
 
 body {
@@ -21,6 +23,7 @@ body {
     display: flex;
     height: 100vh;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* ==========================================
@@ -255,7 +258,7 @@ body {
     aspect-ratio: 2.5 / 1;
     max-height: 400px;
     position: relative;
-    border-radius: 20px;
+    border-radius: 0px;
     overflow: hidden;
     background: #e0e0e0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -339,7 +342,7 @@ body {
     background: var(--branco);
     border: 1px solid var(--cor-borda);
     padding: 0 15px;
-    border-radius: 12px;
+    border-radius: 0px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -362,7 +365,7 @@ body {
     border: 1px solid var(--cor-borda);
     padding: 0 18px;
     height: 48px;
-    border-radius: 12px;
+    border-radius: 0px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -389,7 +392,7 @@ body {
 
 .card-clinica {
     background: var(--branco);
-    border-radius: 20px;
+    border-radius: 0px;
     overflow: visible;
     /* IMPORTANTE: Permite que a foto de perfil "flutue" */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
@@ -513,7 +516,7 @@ body {
     color: white;
     border: none;
     padding: 14px;
-    border-radius: 12px;
+    border-radius: 0px;
     font-weight: 700;
     font-size: 14px;
     cursor: pointer;
