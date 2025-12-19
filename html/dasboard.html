@@ -207,6 +207,61 @@
 
             <section id="agenda" class="tela">
                 <h2 class="titulo-pagina">Agendamentos</h2>
+                <div class="grid-agendamentos">
+
+                    <div class="card-agendamento">
+                        <div class="header-agendamento">
+                            <span class="status-badge agendado">Agendado</span>
+                            <span class="data-consulta"><i class="fa-regular fa-calendar"></i> 26/10/2024</span>
+                        </div>
+                        <div class="corpo-agendamento">
+                            <h3>Clinica Lumina</h3>
+                            <p><i class="fa-solid fa-location-dot"></i> Av. Paulista, 1234 - SP</p>
+                            <p><i class="fa-solid fa-user-doctor"></i> Dr. João Silva</p>
+                            <p><i class="fa-regular fa-clock"></i> 14:00</p>
+                        </div>
+                        <button class="btn-detalhes"
+                            onclick="abrirModal('Clinica Lumina', 'Av. Paulista, 1234 - SP', 'Dr. João Silva', '26/10/2024', '14:00', 'Limpeza e Avaliação')">
+                            Ver Detalhes
+                        </button>
+                    </div>
+
+                    <div class="card-agendamento realizado-card">
+                        <div class="header-agendamento">
+                            <span class="status-badge realizado">Realizado</span>
+                            <span class="data-consulta">15/09/2024</span>
+                        </div>
+                        <div class="corpo-agendamento">
+                            <h3>Sorriso Vital</h3>
+                            <p><i class="fa-solid fa-location-dot"></i> Rua das Flores, 50 - RJ</p>
+                            <p><i class="fa-solid fa-user-doctor"></i> Dra. Ana Costa</p>
+                            <p><i class="fa-regular fa-clock"></i> 09:30</p>
+                        </div>
+                        <button class="btn-detalhes"
+                            onclick="abrirModal('Sorriso Vital', 'Rua das Flores, 50 - RJ', 'Dra. Ana Costa', '15/09/2024', '09:30', 'Extração de Siso')">
+                            Ver Detalhes
+                        </button>
+                    </div>
+
+                    <div class="card-agendamento cancelado-card">
+                        <div class="header-agendamento">
+                            <span class="status-badge cancelado">Cancelado</span>
+                            <span class="data-consulta">02/10/2024</span>
+                        </div>
+                        <div class="corpo-agendamento">
+                            <h3>Odonto Essencial</h3>
+                            <p><i class="fa-solid fa-location-dot"></i> Av. Central, 800 - BH</p>
+                            <p><i class="fa-solid fa-user-doctor"></i> Dr. Marcos Lima</p>
+                            <p><i class="fa-regular fa-clock"></i> 16:00</p>
+                        </div>
+                        <button class="btn-detalhes"
+                            onclick="abrirModal('Odonto Essencial', 'Av. Central, 800 - BH', 'Dr. Marcos Lima', '02/10/2024', '16:00', 'Clareamento Dental')">
+                            Ver Detalhes
+                        </button>
+                    </div>
+
+                </div>
+
             </section>
             <section id="consultas" class="tela">
                 <h2 class="titulo-pagina">Minhas Consultas</h2>
@@ -305,6 +360,61 @@
             </section>
             <section id="ajustes" class="tela">
                 <h2 class="titulo-pagina">Ajustes</h2>
+                <div class="container-config">
+                    <div class="abas-config">
+                        <button class="aba-item ativa" onclick="trocarAba(event, 'aba-perfil')">Configurações</button>
+                        <button class="aba-item" onclick="trocarAba(event, 'aba-seguranca')">Login e segurança</button>
+                    </div>
+
+                    <div id="aba-perfil" class="conteudo-aba ativa">
+                        <p class="label-foto">Escolha uma foto de Perfil</p>
+                        <div class="upload-foto-container" onclick="document.getElementById('fileInput').click()">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <span>Upload da foto</span>
+                            <input type="file" id="fileInput" hidden>
+                        </div>
+
+                        <div class="grid-inputs">
+                            <div class="input-grupo">
+                                <label> Alterar nome</label>
+                                <input type="text" placeholder="Gabriel Gomes Matos">
+                            </div>
+                            <div class="input-grupo">
+                                <label> Alterar Email</label>
+                                <input type="email" placeholder="gabrielgomes@gmail.com">
+                            </div>
+                            <div class="input-grupo">
+                                <label>CPF</label>
+                                <input type="text" placeholder="000.000.000-00">
+                            </div>
+                            <div class="input-grupo">
+                                <label>Alterar número de Telefone</label>
+                                <input type="text" placeholder="(91) 99999-9999">
+                            </div>
+                        </div>
+
+                        <button class="btn-salvar">Salvar Alterações</button>
+                    </div>
+
+                    <div id="aba-seguranca" class="conteudo-aba">
+                        <div class="grid-inputs">
+                            <div class="input-grupo">
+                                <label>Senha Atual</label>
+                                <input type="password" placeholder="••••••••">
+                            </div>
+                            <div style="grid-column: span 1;"></div>
+                            <div class="input-grupo">
+                                <label>Nova Senha</label>
+                                <input type="password" placeholder="Digite a nova senha">
+                            </div>
+                            <div class="input-grupo">
+                                <label>Confirmar Nova Senha</label>
+                                <input type="password" placeholder="Confirme a nova senha">
+                            </div>
+                        </div>
+                        <button class="btn-salvar">Atualizar Senha</button>
+                    </div>
+                </div>
             </section>
         </main>
     </div>

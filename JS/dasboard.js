@@ -177,3 +177,19 @@ function prepararReagendamento() {
         }
     }
 }
+
+function trocarAba(event, abaId) {
+    // Esconde todos os conteúdos
+    document.querySelectorAll('.conteudo-aba').forEach(aba => {
+        aba.classList.remove('ativa');
+    });
+
+    // Remove classe ativa de todos os botões
+    document.querySelectorAll('.aba-item').forEach(btn => {
+        btn.classList.remove('ativa');
+    });
+
+    // Mostra a aba clicada e ativa o botão
+    document.getElementById(abaId).classList.add('ativa');
+    event.currentTarget.classList.add('ativa');
+}
