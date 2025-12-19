@@ -102,3 +102,78 @@ function mostrarTela(id, btn) {
         document.querySelector('.area-conteudo').scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
+
+// Funções do Modal
+function abrirModal(clinica, dentista, data, hora, procedimento, endereco) {
+    const modal = document.getElementById('modalDetalhes');
+    
+    // Preenche os campos do modal
+    document.getElementById('modalClinica').innerText = clinica;
+    document.getElementById('modalEndereco').innerText = endereco;
+    document.getElementById('modalDentista').innerText = dentista;
+    document.getElementById('modalDataHora').innerText = `${data} às ${hora}`;
+    document.getElementById('modalProcedimento').innerText = procedimento;
+    
+    
+    
+    modal.style.display = 'flex';
+}
+
+function fecharModal() {
+    document.getElementById('modalDetalhes').style.display = 'none';
+}
+
+// Fecha o modal ao clicar fora dele
+window.onclick = function(event) {
+    const modal = document.getElementById('modalDetalhes');
+    if (event.target == modal) {
+        fecharModal();
+    }
+}
+
+// Variável para controlar se estamos no modo visualização ou edição
+let modoEdicao = false;
+
+function fecharModal() {
+    document.getElementById('modalDetalhes').style.display = 'none';
+    resetarModal(); // Garante que o modal volte ao estado inicial ao fechar
+}
+
+function resetarModal() {
+    modoEdicao = false;
+    document.getElementById('infoConsulta').style.display = 'block';
+    document.getElementById('formReagendar').style.display = 'none';
+    document.getElementById('btnAcaoPrincipal').innerText = 'Reagendar';
+    document.getElementById('btnAcaoPrincipal').style.background = 'var(--azul-claro)';
+}
+
+function prepararReagendamento() {
+    const info = document.getElementById('infoConsulta');
+    const form = document.getElementById('formReagendar');
+    const btn = document.getElementById('btnAcaoPrincipal');
+
+    if (!modoEdicao) {
+        // Entra no modo de escolha de data
+        info.style.display = 'none';
+        form.style.display = 'block';
+        btn.innerText = 'Confirmar Nova Data';
+        btn.style.background = 'var(--verde-sucesso)';
+        modoEdicao = true;
+    } else {
+        // Lógica para Salvar o Reagendamento
+        const data = document.getElementById('novaData').value;
+        const hora = document.getElementById('novoHorario').value;
+
+        if (data && hora) {
+            // Aqui você faria a chamada para o banco de dados futuramente
+            alert(`Sucesso! Sua consulta foi reagendada para ${data} às ${hora}.`);
+            
+            // Atualiza visualmente o modal (opcional)
+            document.getElementById('modalDataHora').innerText = `${data} às ${hora}`;
+            
+            fecharModal();
+        } else {
+            alert("Por favor, selecione a data e o horário.");
+        }
+    }
+}

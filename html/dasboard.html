@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +29,7 @@
             </div>
             <div class="item-menu" onclick="mostrarTela('agenda', this)">
                 <i class="fa-solid fa-calendar"></i>
-                <span class="legenda">Agenda</span>
+                <span class="legenda">Agendamentos</span>
             </div>
             <div class="item-menu" onclick="mostrarTela('consultas', this)">
                 <i class="fa-solid fa-tooth"></i>
@@ -67,7 +68,7 @@
         <main class="area-conteudo">
             <section id="inicio" class="tela ativa">
                 <h2 class="titulo-pagina">Página Inicial</h2>
-                
+
                 <div class="container-carrossel">
                     <div class="slide-carrossel"><img src="../img/banner simples.png"></div>
                     <div class="slide-carrossel"><img src="../img/Agende já sua consulta (1).png"></div>
@@ -104,7 +105,7 @@
                         <div class="info-card">
                             <div class="rating-row">
                                 <div class="rating-stars">
-                                    <i class="fa-solid fa-star star-yellow"></i> 
+                                    <i class="fa-solid fa-star star-yellow"></i>
                                     <span>0.00</span>
                                 </div>
                                 <div class="user-stats">
@@ -131,7 +132,7 @@
                         <div class="info-card">
                             <div class="rating-row">
                                 <div class="rating-stars">
-                                    <i class="fa-solid fa-star star-yellow"></i> 
+                                    <i class="fa-solid fa-star star-yellow"></i>
                                     <span>0.00</span>
                                 </div>
                                 <div class="user-stats">
@@ -149,7 +150,8 @@
 
                     <div class="card-clinica">
                         <div class="banner-card">
-                            <img src="../img/clinica_sorriso_vital.png" class="fundo-banner" alt="Clinica Sorriso Vital">
+                            <img src="../img/clinica_sorriso_vital.png" class="fundo-banner"
+                                alt="Clinica Sorriso Vital">
                             <div class="perfil-clinica-container">
                                 <img src="../img/logo Sorriso VItal.png" class="foto-perfil-card">
                                 <div class="selo-verificado-pequeno"><i class="fa-solid fa-check"></i></div>
@@ -158,7 +160,7 @@
                         <div class="info-card">
                             <div class="rating-row">
                                 <div class="rating-stars">
-                                    <i class="fa-solid fa-star star-yellow"></i> 
+                                    <i class="fa-solid fa-star star-yellow"></i>
                                     <span>0.00</span>
                                 </div>
                                 <div class="user-stats">
@@ -185,7 +187,7 @@
                         <div class="info-card">
                             <div class="rating-row">
                                 <div class="rating-stars">
-                                    <i class="fa-solid fa-star star-yellow"></i> 
+                                    <i class="fa-solid fa-star star-yellow"></i>
                                     <span>0.00</span>
                                 </div>
                                 <div class="user-stats">
@@ -203,11 +205,110 @@
                 </div>
             </section>
 
-            <section id="agenda" class="tela"><h2 class="titulo-pagina">Agenda</h2></section>
-            <section id="consultas" class="tela"><h2 class="titulo-pagina">Minhas Consultas</h2></section>
-            <section id="ajustes" class="tela"><h2 class="titulo-pagina">Ajustes</h2></section>
+            <section id="agenda" class="tela">
+                <h2 class="titulo-pagina">Agendamentos</h2>
+            </section>
+            <section id="consultas" class="tela">
+                <h2 class="titulo-pagina">Minhas Consultas</h2>
+                <div class="grid-agendamentos">
+                    <div class="card-agendamento">
+                        <div class="header-agendamento">
+                            <span class="status-badge agendado">Agendado</span>
+                            <span class="data-consulta"><i class="fa-regular fa-calendar"></i> 26/10/2024</span>
+                        </div>
+                        <div class="corpo-agendamento">
+                            <h3>Clinica Lumina</h3>
+                            <p><i class="fa-solid fa-user-doctor"></i> Dr. João Silva</p>
+                            <p><i class="fa-regular fa-clock"></i> 14:00</p>
+                        </div>
+                        <button class="btn-detalhes"
+                            onclick="abrirModal('Lumina', 'Dr. João Silva', '26/10/2024', '14:00', 'Limpeza e Avaliação')">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consultas" class="tela">
+                <h2 class="titulo-pagina">Minhas Consultas</h2>
+                <div class="grid-agendamentos">
+                    <div class="card-agendamento">
+                        <div class="header-agendamento">
+                            <span class="status-badge agendado">Agendado</span>
+                            <span class="data-consulta"><i class="fa-regular fa-calendar"></i> 26/10/2024</span>
+                        </div>
+                        <div class="corpo-agendamento">
+                            <h3>Clinica Lumina</h3>
+                            <p><i class="fa-solid fa-user-doctor"></i> Dr. João Silva</p>
+                            <p><i class="fa-regular fa-clock"></i> 14:00</p>
+                        </div>
+                        <button class="btn-detalhes"
+                            onclick="abrirModal('Clinica Lumina', 'Av. Paulista, 1234 - São Paulo', 'Dr. João Silva', '26/10/2024', '14:00', 'Limpeza e Avaliação')">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <div id="modalDetalhes" class="modal-overlay">
+                <div class="modal-conteudo">
+                    <div class="modal-header">
+                        <h3>Detalhes da Consulta</h3>
+                        <button class="fechar-modal" onclick="fecharModal()">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="infoConsulta">
+                            <div class="detalhe-item">
+                                <strong>Clínica:</strong>
+                                <span id="modalClinica"></span>
+                            </div>
+                            <div class="detalhe-item">
+                                <strong>Dentista:</strong>
+                                <span id="modalDentista"></span>
+                            </div>
+                            <div class="detalhe-item">
+                                <strong>Data e Hora:</strong>
+                                <span id="modalDataHora"></span>
+                            </div>
+                            <div class="detalhe-item">
+                                <strong>Procedimento:</strong>
+                                <span id="modalProcedimento"></span>
+                            </div>
+                            <div class="detalhe-item">
+                                <strong>Endereço:</strong>
+                                <span id="modalEndereco" style="font-size: 13px; color: var(--texto-suave);"></span>
+                            </div>
+                        </div>
+
+                        <div id="formReagendar" style="display: none;">
+                            <p style="margin-bottom: 15px; font-size: 14px; color: var(--texto-suave);">Selecione o novo
+                                horário desejado:</p>
+                            <div class="detalhe-item">
+                                <strong>Nova Data:</strong>
+                                <input type="date" id="novaData" class="input-reagendar">
+                            </div>
+                            <div class="detalhe-item">
+                                <strong>Novo Horário:</strong>
+                                <input type="time" id="novoHorario" class="input-reagendar">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn-secundario" id="btnFechar" onclick="fecharModal()">Fechar</button>
+                        <button class="btn-principal" id="btnAcaoPrincipal"
+                            onclick="prepararReagendamento()">Reagendar</button>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <section id="ajustes" class="tela">
+                <h2 class="titulo-pagina">Ajustes</h2>
+            </section>
         </main>
     </div>
     <script src="../JS/dasboard.js"></script>
 </body>
+
 </html>
