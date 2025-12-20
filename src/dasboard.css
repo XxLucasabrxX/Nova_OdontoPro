@@ -1157,7 +1157,7 @@ body {
 }
 
 /* Botão Agendar */
-.btn-agendar-consulta {
+.agendar-btn {
     background: #2ecc71;
     color: white;
     border: none;
@@ -1168,7 +1168,7 @@ body {
     transition: 0.3s ease;
 }
 
-.btn-agendar-consulta:hover {
+.agendar-btn:hover {
     background: #27ae60;
     transform: translateY(-2px);
 }
@@ -1352,7 +1352,7 @@ body {
     padding: 30px;
     border-radius: 15px; /* Cantos arredondados conforme design */
     width: 600px;
-    max-width: 90%;
+    max-width: 550px;
     position: relative;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     text-align: center;
@@ -1367,6 +1367,28 @@ body {
     font-size: 12px;
     display: inline-block;
     margin-bottom: 15px;
+}
+
+
+.selection-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.radio-options {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
 }
 
 /* Inputs e Selects */
@@ -1454,4 +1476,42 @@ body {
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 12px;
+}
+
+.gender-container {
+    display: flex;
+    justify-content: center; /* Centraliza no modal */
+    gap: 40px;               /* Espaço entre eles */
+    margin: 15px 0;
+}
+
+.gender-container label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+/* Botão Verde Principal (O que abre o pop-up) */
+/* Procure no seu HTML o botão "Agendar Consulta" e coloque essa classe nele */
+.btn-agendar-green {
+    background-color: #2ecc71 !important; /* Força o verde do Figma */
+    color: white !important;
+    border: none !important;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.btn-agendar-green:hover {
+    background-color: #27ae60 !important;
+}
+
+.modal-content h3 {
+    margin: 20px 0 5px 0 !important; /* Respiro entre a tag azul e o subtítulo */
+    font-size: 20px;
+    color: #333;
 }

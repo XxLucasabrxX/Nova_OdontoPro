@@ -508,69 +508,88 @@
                     </button>
 
 
-<div id="modal-agendamento-1" class="modal">
-    <div class="modal-content">
-        <span class="tag-online">📅 Agendamento Online</span>
-        <h3>Preencha seu Dados</h3>
-        <p class="subtitle">Todos os campos com * são obrigatórios</p>
-        
-        <input type="text" placeholder="Digite seu nome completo">
-        
-        <div class="gender-selection">
-            <label><input type="radio" name="gender" value="Masculino"> Masculino</label>
-            <label><input type="radio" name="gender" value="Feminino"> Feminino</label>
-        </div>
+                    <div id="modal-agendamento-1" class="modal">
+                        <div class="modal-content">
+                            <span class="tag-online">📅 Agendamento Online</span>
+                            <h3>Preencha seu Dados</h3>
+                            <p class="subtitle">Todos os campos com * são obrigatórios</p>
 
-        <div class="input-group">
-            <div>
-                <label>Email</label>
-                <input type="email" placeholder="Seu @gmail.com">
-            </div>
-            <div>
-                <label>Número de Telefone</label>
-                <input type="tel" placeholder="(91) 99999-9999">
-            </div>
-        </div>
+                            <input type="text" placeholder="Digite seu nome completo">
 
-        <textarea placeholder="Descreva seus sintomas ou informações adicionais"></textarea>
-        
-        <button class="btn-cyan" onclick="proximaEtapa()">Continuar Preenchendo</button>
-        
-        <div class="security-banner">
-            🛡️ Suas informações estão seguras e protegidas
-        </div>
-    </div>
-</div>
+                            <div class="selection-row">
+                                <div class="selection-group">
+                                    <label class="group-title">Gênero</label>
+                                    <div class="radio-options">
+                                        <label><input type="radio" name="gender" value="Masculino"> Masculino</label>
+                                        <label><input type="radio" name="gender" value="Feminino"> Feminino</label>
+                                    </div>
+                                </div>
 
-<div id="modal-agendamento-2" class="modal" style="display:none;">
-    <div class="modal-content">
-        <span class="tag-online">📅 Agendamento Online</span>
-        <h3>Escolha o tipo de consulta</h3>
-        
-        <select><option>Selecione uma Especialidade</option></select>
-        <select><option>Escolha um Profissional</option></select>
-        
-        <div class="input-group">
-            <input type="date">
-            <select><option>Selecione o Horário</option></select>
-        </div>
+                                <div class="selection-group">
+                                    <label class="group-title">Faixa Etária</label>
+                                    <div class="radio-options">
+                                        <label><input type="radio" name="age" value="Adulto"> Adulto</label>
+                                        <label><input type="radio" name="age" value="Infantil"> Infantil</label>
+                                    </div>
+                                </div>
+                            </div>
 
-        <button class="btn-cyan" onclick="confirmarAgendamento()">Agendar Consulta</button>
-        
-        <div class="security-banner">
-            🛡️ Suas informações estão seguras e protegidas
-        </div>
-    </div>
-</div>
+                            <div class="input-group">
+                                <div>
+                                    <label>Email</label>
+                                    <input type="email" placeholder="Seu @gmail.com">
+                                </div>
+                                <div>
+                                    <label>Número de Telefone</label>
+                                    <input type="tel" placeholder="(91) 99999-9999">
+                                </div>
+                            </div>
 
-<div id="modal-sucesso" class="modal" style="display:none;">
-    <div class="modal-content">
-        <div class="success-icon">✅</div>
-        <h3>Agendamento Realizado com Sucesso!</h3>
-        <p>Sua consulta foi marcada e está segura.</p>
-        <button class="btn-cyan" onclick="irParaMeusAgendamentos()">Ver Meus Agendamentos</button>
-    </div>
-</div>
+                            <textarea placeholder="Descreva seus sintomas ou informações adicionais"></textarea>
+
+                            <button class="btn-cyan" onclick="proximaEtapa()">Continuar Preenchendo</button>
+
+                            <div class="security-banner">
+                                🛡️ Suas informações estão seguras e protegidas
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modal-agendamento-2" class="modal" style="display:none;">
+                        <div class="modal-content">
+                            <span class="tag-online">📅 Agendamento Online</span>
+                            <h3>Escolha o tipo de consulta</h3>
+
+                            <select>
+                                <option>Selecione uma Especialidade</option>
+                            </select>
+                            <select>
+                                <option>Escolha um Profissional</option>
+                            </select>
+
+                            <div class="input-group">
+                                <input type="date">
+                                <select>
+                                    <option>Selecione o Horário</option>
+                                </select>
+                            </div>
+
+                            <button class="btn-cyan" onclick="confirmarAgendamento()">Agendar Consulta</button>
+
+                            <div class="security-banner">
+                                🛡️ Suas informações estão seguras e protegidas
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modal-sucesso" class="modal" style="display:none;">
+                        <div class="modal-content">
+                            <div class="success-icon">✅</div>
+                            <h3>Agendamento Realizado com Sucesso!</h3>
+                            <p>Sua consulta foi marcada e está segura.</p>
+                            <button class="btn-cyan" onclick="irParaMeusAgendamentos()">Ver Meus Agendamentos</button>
+                        </div>
+                    </div>
             </section>
         </main>
     </div>
