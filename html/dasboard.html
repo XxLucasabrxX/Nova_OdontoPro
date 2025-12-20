@@ -117,7 +117,9 @@
                                 </div>
                             </div>
                             <h3>Clinica Lumina</h3>
-                            <button class="btn-saiba-mais">Saiba Mais</button>
+                            <button class="btn-saiba-mais" onclick="verDetalhesClinica()">
+                                Saiba Mais
+                            </button>
                         </div>
                     </div>
 
@@ -416,8 +418,63 @@
                     </div>
                 </div>
             </section>
+
+
+            <section id="perfil-clinica" class="tela">
+                <div class="container-perfil">
+                    <h1 class="titulo-sessao">Sobre a Clinica</h1>
+                    <div class="card-branco header-clinica-detalhe">
+                        <div class="clinica-info-principal">
+                            <img src="../img/logo Lumina.png" alt="Logo Clínica" class="logo-clinica-detalhe">
+                            <div class="clinica-textos">
+                                <h2 id="detalheNomeClinica">Clinica Lumina</h2>
+                                <p id="detalheEmailClinica">clinicalumina@gmail.com</p>
+                                <p id="detalheTelClinica">+55 (91) 9999-9999</p>
+                            </div>
+                        </div>
+                        <button class="btn-agendar-consulta">Agendar Consulta</button>
+                    </div>
+
+                    <div class="abas-perfil">
+                        <button class="aba-item ativa">Sobre Clinica</button>
+                        <button class="aba-item">Avaliações</button>
+                        <button class="aba-item">Endereço</button>
+                    </div>
+
+                    <div class="card-branco">
+                        <div class="tag-secao">
+                            <i class="fa-solid fa-tooth"></i> Descrição da Clinica
+                        </div>
+                        <p class="descricao-texto">
+                            A Clínica Lumina é uma clínica odontológica que atende diversas especialidades, focando em
+                            odontologia geral com uma equipe ampla, promovendo saúde bucal e estética em um só lugar,
+                            com um bom ambiente para os pacientes, atuando em locais como Belém (PA) e possivelmente
+                            outras regiões.
+                        </p>
+                    </div>
+
+                    <div class="card-branco">
+                        <div class="tag-secao">
+                            <i class="fa-solid fa-clipboard-list"></i> Serviços Disponíveis
+                        </div>
+                        <ul class="lista-servicos-bullets">
+                            <li>Prótese Fixa</li>
+                            <li>Overdenture</li>
+                            <li>Cirurgia Guiada</li>
+                            <li>Carga Imediata</li>
+                            <li>Prótese do Tipo Protocolo</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn-voltar-perfil" onclick="voltarParaInicio()">
+                        <i class="fa-solid fa-chevron-left"></i> Voltar
+                    </button>
+                </div>
+            </section>
         </main>
     </div>
+
+
     <script src="../JS/dasboard.js"></script>
 </body>
 

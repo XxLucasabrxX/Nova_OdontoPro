@@ -193,3 +193,23 @@ function trocarAba(event, abaId) {
     document.getElementById(abaId).classList.add('ativa');
     event.currentTarget.classList.add('ativa');
 }
+
+function verDetalhesClinica(nome, email, tel, desc) {
+    // 1. Esconde as outras telas
+    document.querySelectorAll('.tela').forEach(t => t.style.display = 'none');
+    
+    // 2. Preenche os dados (Opcional se quiser tornar dinâmico)
+    if(nome) document.getElementById('detalheNomeClinica').innerText = nome;
+    
+    // 3. Mostra a tela de perfil centralizada
+    const telaPerfil = document.getElementById('perfil-clinica');
+    telaPerfil.style.display = 'flex';
+    
+    // 4. Sobe a página para o topo
+    window.scrollTo(0, 0);
+}
+
+function voltarParaInicio() {
+    document.getElementById('perfil-clinica').style.display = 'none';
+    document.getElementById('inicio').style.display = 'block'; // ajuste para sua ID de home
+}

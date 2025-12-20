@@ -965,3 +965,114 @@ body {
 .conteudo-aba.ativa {
     display: block;
 }
+
+/* TELA PRINCIPAL */
+#perfil-clinica {
+    display: none; /* JS muda para flex */
+    flex-direction: column;
+    align-items: center; /* CENTRALIZA O CONTEÚDO HORIZONTALMENTE */
+    width: 100%;
+    background-color: #f4f7fe;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.container-perfil {
+    width: 100%;
+    max-width: 1100px; /* Largura idêntica à da sua imagem */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* CARDS BRANCOS */
+.titulo-sessao {
+    font-size: 24px;
+    color: #2d3748;
+    margin: 10px 0;
+}
+
+.card-branco {
+    background: white;
+    border-radius: 25px;
+    padding: 30px;
+    border: 1px solid #edf2f7;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-clinica-detalhe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clinica-info-principal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-clinica-detalhe {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+/* ABAS */
+.abas-perfil {
+    display: flex;
+    gap: 30px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.aba-item {
+    background: none;
+    border: none;
+    padding: 15px 0;
+    color: #a0aec0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.aba-item.ativa {
+    color: #00b9e8;
+    border-bottom: 3px solid #00b9e8;
+    font-weight: 600;
+}
+
+/* TAGS E BOTÕES */
+.tag-secao {
+    background: #f7fafc;
+    padding: 8px 15px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #718096;
+    margin-bottom: 15px;
+}
+
+.btn-agendar-consulta {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-voltar-perfil {
+    background: #edf2f7;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #718096;
+    cursor: pointer;
+    width: fit-content;
+}
+
