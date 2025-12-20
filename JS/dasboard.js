@@ -213,3 +213,76 @@ function voltarParaInicio() {
     document.getElementById('perfil-clinica').style.display = 'none';
     document.getElementById('inicio').style.display = 'block'; // ajuste para sua ID de home
 }
+
+function trocarAba(event, abaId) {
+    // Esconde todas com efeito de saída
+    const conteudos = document.querySelectorAll('.aba-conteudo');
+    conteudos.forEach(aba => {
+        aba.style.display = 'none';
+        aba.classList.remove('ativa');
+    });
+
+    // Desativa botões
+    const botoes = document.querySelectorAll('.aba-item');
+    botoes.forEach(btn => btn.classList.remove('ativa'));
+
+    // Ativa aba selecionada
+    const abaAtiva = document.getElementById('aba-' + abaId);
+    abaAtiva.style.display = 'flex';
+    setTimeout(() => abaAtiva.classList.add('ativa'), 10);
+
+    // Ativa botão selecionado
+    event.currentTarget.classList.add('ativa');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleção dos elementos
+    const btnAbrir = document.getElementById('btn-abrir-agendamento');
+    const modal1 = document.getElementById('modal-agendamento-1');
+    const modal2 = document.getElementById('modal-agendamento-2');
+    const modalSucesso = document.getElementById('modal-sucesso');
+
+    // 1. Abrir o primeiro Pop-up
+    if (btnAbrir) {
+        btnAbrir.onclick = function() {
+            modal1.style.display = 'flex';
+        };
+    }
+
+    // 2. Ir para a segunda etapa
+    window.proximaEtapa = function() {
+        modal1.style.display = 'none';
+        modal2.style.display = 'flex';
+    };
+
+    // 3. Confirmar e mostrar sucesso
+    window.confirmarAgendamento = function() {
+        modal2.style.display = 'none';
+        modalSucesso.style.display = 'flex';
+    };
+
+    // 4. Fechar ao clicar fora do modal (Opcional)
+    window.onclick = function(event) {
+        if (event.target.className === 'modal') {
+            event.target.style.display = 'none';
+        }
+    };
+});
+
+function irParaMeusAgendamentos() {
+    // 1. Esconder o modal de sucesso
+    const modalSucesso = document.getElementById('modal-sucesso');
+    if (modalSucesso) modalSucesso.style.display = 'none';
+
+    // 2. Esconder todas as seções que têm a classe 'tela'
+    const todasAsTelas = document.querySelectorAll('.tela');
+    todasAsTelas.forEach(tela => {
+        tela.style.display = 'none';
+    });
+
+    // 3. Mostrar especificamente a seção de consultas
+    const telaConsultas = document.getElementById('consultas');
+    if (telaConsultas) {
+        telaConsultas.style.display = 'block'; // Ou 'flex', dependendo do seu CSS
+    };
+};

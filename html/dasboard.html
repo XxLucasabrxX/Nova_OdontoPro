@@ -419,7 +419,6 @@
                 </div>
             </section>
 
-
             <section id="perfil-clinica" class="tela">
                 <div class="container-perfil">
                     <h1 class="titulo-sessao">Sobre a Clinica</h1>
@@ -428,53 +427,153 @@
                             <img src="../img/logo Lumina.png" alt="Logo Clínica" class="logo-clinica-detalhe">
                             <div class="clinica-textos">
                                 <h2 id="detalheNomeClinica">Clinica Lumina</h2>
-                                <p id="detalheEmailClinica">clinicalumina@gmail.com</p>
-                                <p id="detalheTelClinica">+55 (91) 9999-9999</p>
+                                <p><i class="fa-regular fa-envelope"></i> clinicalumina@gmail.com</p>
+                                <p><i class="fa-solid fa-phone-volume"></i> +55 (91) 9999-9999</p>
                             </div>
                         </div>
-                        <button class="btn-agendar-consulta">Agendar Consulta</button>
+                        <button id="btn-abrir-agendamento" class="agendar-btn">Agendar Consulta</button>
                     </div>
+
 
                     <div class="abas-perfil">
-                        <button class="aba-item ativa">Sobre Clinica</button>
-                        <button class="aba-item">Avaliações</button>
-                        <button class="aba-item">Endereço</button>
+                        <button class="aba-item ativa" onclick="trocarAba(event, 'sobre')">Sobre Clinica</button>
+                        <button class="aba-item" onclick="trocarAba(event, 'avaliacoes')">Avaliações</button>
+                        <button class="aba-item" onclick="trocarAba(event, 'endereco')">Endereço</button>
                     </div>
 
-                    <div class="card-branco">
-                        <div class="tag-secao">
-                            <i class="fa-solid fa-tooth"></i> Descrição da Clinica
+                    <div id="aba-sobre" class="aba-conteudo ativa">
+                        <div class="card-branco">
+                            <div class="tag-secao"><i class="fa-solid fa-tooth"></i> Descrição da Clinica</div>
+                            <p class="descricao-texto">A Clínica Lumina é uma clínica odontológica que atende diversas
+                                especialidades, focando em odontologia geral com uma equipe ampla...</p>
                         </div>
-                        <p class="descricao-texto">
-                            A Clínica Lumina é uma clínica odontológica que atende diversas especialidades, focando em
-                            odontologia geral com uma equipe ampla, promovendo saúde bucal e estética em um só lugar,
-                            com um bom ambiente para os pacientes, atuando em locais como Belém (PA) e possivelmente
-                            outras regiões.
-                        </p>
-                    </div>
-
-                    <div class="card-branco">
-                        <div class="tag-secao">
-                            <i class="fa-solid fa-clipboard-list"></i> Serviços Disponíveis
+                        <div class="card-branco">
+                            <div class="tag-secao"><i class="fa-solid fa-clipboard-list"></i> Serviços Disponíveis</div>
+                            <ul class="lista-servicos-bullets">
+                                <li>Prótese Fixa</li>
+                                <li>Overdenture</li>
+                                <li>Cirurgia Guiada</li>
+                            </ul>
                         </div>
-                        <ul class="lista-servicos-bullets">
-                            <li>Prótese Fixa</li>
-                            <li>Overdenture</li>
-                            <li>Cirurgia Guiada</li>
-                            <li>Carga Imediata</li>
-                            <li>Prótese do Tipo Protocolo</li>
-                        </ul>
                     </div>
 
+                    <div id="aba-avaliacoes" class="aba-conteudo">
+                        <div class="card-branco">
+                            <div class="tag-secao"><i class="fa-solid fa-star"></i> O que dizem nossos pacientes</div>
+                            <div class="container-avaliacoes">
+                                <div class="card-feedback">
+                                    <div class="user-feedback">
+                                        <img src="https://i.pravatar.cc/150?u=1" alt="Paciente">
+                                        <div>
+                                            <strong>Ricardo Alves</strong>
+                                            <div class="estrelas">★★★★★</div>
+                                        </div>
+                                    </div>
+                                    <p>"Atendimento impecável desde a recepção até o consultório. Recomendo muito!"</p>
+                                </div>
+                                <div class="card-feedback">
+                                    <div class="user-feedback">
+                                        <img src="https://i.pravatar.cc/150?u=2" alt="Paciente">
+                                        <div>
+                                            <strong>Ana Clara</strong>
+                                            <div class="estrelas">★★★★★</div>
+                                        </div>
+                                    </div>
+                                    <p>"A clínica é moderna e os profissionais são muito atenciosos. Nota 10!"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="aba-endereco" class="aba-conteudo">
+                        <div class="card-branco">
+                            <div class="tag-secao"><i class="fa-solid fa-location-dot"></i> Localização</div>
+                            <div class="endereco-detalhes">
+                                <p><strong>Unidade Belém:</strong> Av. Visc. de Souza Franco, 600 - Reduto, Belém - PA,
+                                    66053-000</p>
+                                <p><i class="fa-solid fa-clock"></i> Segunda a Sexta: 08h às 18h | Sábado: 08h às 12h
+                                </p>
+                            </div>
+                            <div class="mapa-google">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.513239247653!2d-48.4901!3d-1.4558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMjcnMjAuOSJTIDQ4wrAyOScyNC40Ilc!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                                    width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen=""
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
                     <button class="btn-voltar-perfil" onclick="voltarParaInicio()">
                         <i class="fa-solid fa-chevron-left"></i> Voltar
                     </button>
-                </div>
+
+
+<div id="modal-agendamento-1" class="modal">
+    <div class="modal-content">
+        <span class="tag-online">📅 Agendamento Online</span>
+        <h3>Preencha seu Dados</h3>
+        <p class="subtitle">Todos os campos com * são obrigatórios</p>
+        
+        <input type="text" placeholder="Digite seu nome completo">
+        
+        <div class="gender-selection">
+            <label><input type="radio" name="gender" value="Masculino"> Masculino</label>
+            <label><input type="radio" name="gender" value="Feminino"> Feminino</label>
+        </div>
+
+        <div class="input-group">
+            <div>
+                <label>Email</label>
+                <input type="email" placeholder="Seu @gmail.com">
+            </div>
+            <div>
+                <label>Número de Telefone</label>
+                <input type="tel" placeholder="(91) 99999-9999">
+            </div>
+        </div>
+
+        <textarea placeholder="Descreva seus sintomas ou informações adicionais"></textarea>
+        
+        <button class="btn-cyan" onclick="proximaEtapa()">Continuar Preenchendo</button>
+        
+        <div class="security-banner">
+            🛡️ Suas informações estão seguras e protegidas
+        </div>
+    </div>
+</div>
+
+<div id="modal-agendamento-2" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="tag-online">📅 Agendamento Online</span>
+        <h3>Escolha o tipo de consulta</h3>
+        
+        <select><option>Selecione uma Especialidade</option></select>
+        <select><option>Escolha um Profissional</option></select>
+        
+        <div class="input-group">
+            <input type="date">
+            <select><option>Selecione o Horário</option></select>
+        </div>
+
+        <button class="btn-cyan" onclick="confirmarAgendamento()">Agendar Consulta</button>
+        
+        <div class="security-banner">
+            🛡️ Suas informações estão seguras e protegidas
+        </div>
+    </div>
+</div>
+
+<div id="modal-sucesso" class="modal" style="display:none;">
+    <div class="modal-content">
+        <div class="success-icon">✅</div>
+        <h3>Agendamento Realizado com Sucesso!</h3>
+        <p>Sua consulta foi marcada e está segura.</p>
+        <button class="btn-cyan" onclick="irParaMeusAgendamentos()">Ver Meus Agendamentos</button>
+    </div>
+</div>
             </section>
         </main>
     </div>
-
-
     <script src="../JS/dasboard.js"></script>
 </body>
 

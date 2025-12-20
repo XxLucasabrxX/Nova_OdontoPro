@@ -968,9 +968,11 @@ body {
 
 /* TELA PRINCIPAL */
 #perfil-clinica {
-    display: none; /* JS muda para flex */
+    display: none;
+    /* JS muda para flex */
     flex-direction: column;
-    align-items: center; /* CENTRALIZA O CONTEÚDO HORIZONTALMENTE */
+    align-items: center;
+    /* CENTRALIZA O CONTEÚDO HORIZONTALMENTE */
     width: 100%;
     background-color: #f4f7fe;
     padding: 20px;
@@ -980,7 +982,8 @@ body {
 
 .container-perfil {
     width: 100%;
-    max-width: 1100px; /* Largura idêntica à da sua imagem */
+    max-width: 1100px;
+    /* Largura idêntica à da sua imagem */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -1076,3 +1079,379 @@ body {
     width: fit-content;
 }
 
+/* --- ESTILO GERAL DA SEÇÃO (CENTRALIZAÇÃO) --- */
+#perfil-clinica {
+    display: none;
+    /* JS muda para flex */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f4f7fe;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Container que limita a largura e centraliza tudo */
+.container-perfil {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Título Principal */
+.titulo-sessao {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a202c;
+    align-self: flex-start;
+    /* Alinha o título à esquerda do container centralizado */
+    margin-bottom: 5px;
+}
+
+/* --- CARDS BRANCOS --- */
+.card-branco {
+    background: #ffffff;
+    border-radius: 0px;
+    padding: 30px;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Header da Clínica */
+.header-clinica-detalhe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.clinica-info-principal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-clinica-detalhe {
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.clinica-textos h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #2d3748;
+}
+
+.clinica-textos p {
+    margin: 4px 0;
+    color: #718096;
+    font-size: 14px;
+}
+
+/* Botão Agendar */
+.btn-agendar-consulta {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-agendar-consulta:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* --- MENU DE ABAS --- */
+.abas-perfil {
+    display: flex;
+    gap: 15px;
+    background: #edf2f7;
+    padding: 6px;
+    border-radius: 14px;
+    width: fit-content;
+}
+
+.aba-item {
+    padding: 10px 24px;
+    border: none;
+    background: transparent;
+    color: #718096;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0px;
+    transition: 0.3s;
+}
+
+
+
+/* --- CONTEÚDO DAS ABAS --- */
+.aba-conteudo {
+    display: none;
+    /* Escondido por padrão */
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.aba-conteudo.ativa {
+    display: flex;
+    /* Mostra apenas a ativa */
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tags de Seção (<i class="fa-tooth"></i> Descrição...) */
+.tag-secao {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #f7fafc;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+.tag-secao i {
+    color: #00b9e8;
+}
+
+/* Listas e Textos */
+.descricao-texto {
+    line-height: 1.7;
+    color: #4a5568;
+    margin: 0;
+}
+
+.lista-servicos-bullets {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-servicos-bullets li {
+    padding: 8px 0;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lista-servicos-bullets li::before {
+    content: "•";
+    color: #00b9e8;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* --- AVALIAÇÕES --- */
+.container-avaliacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-feedback {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid #edf2f7;
+}
+
+.user-feedback {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.user-feedback img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.estrelas {
+    color: #ecc94b;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+/* --- ENDEREÇO E MAPA --- */
+.endereco-detalhes p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4a5568;
+}
+
+.mapa-google {
+    margin-top: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Botão Voltar */
+.btn-voltar-perfil {
+    background: #edf2f7;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    color: #718096;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.btn-voltar-perfil:hover {
+    background: #e2e8f0;
+}
+
+/* Container do Modal (Background escurecido) */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa do Modal */
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px; /* Cantos arredondados conforme design */
+    width: 600px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Cabeçalho e Títulos */
+.modal-header-tag {
+    background-color: #E0F7FA;
+    color: #00BCD4;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* Inputs e Selects */
+.modal-content input, 
+.modal-content select, 
+.modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px; /* Borda suave */
+    font-size: 14px;
+    background-color: #F9FAFB;
+}
+
+/* Grid para campos lado a lado (Email e Telefone) */
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Botão de Ação (Azul claro do design) */
+.btn-continuar {
+    background-color: #26C6DA; /* Cor ciano/azul do protótipo */
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.btn-continuar:hover {
+    background-color: #00ACC1;
+}
+
+.btn-success {
+    background-color: #00E676; /* Verde conforme o botão de agendar */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Container que coloca Email e Telefone lado a lado */
+.input-group {
+    display: flex;
+    gap: 15px;
+    text-align: left;
+}
+.input-group > div { flex: 1; }
+
+/* Botão Azul Ciano do Figma */
+.btn-cyan {
+    background-color: #33CCFF;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Banner Azul Claro de Segurança */
+.security-banner {
+    background-color: #D1E9FF;
+    color: #1976D2;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+/* Estilo da Tag superior */
+.tag-online {
+    background: #E0F7FA;
+    color: #00BCD4;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+}
