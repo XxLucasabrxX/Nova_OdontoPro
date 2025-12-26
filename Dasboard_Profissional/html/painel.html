@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OdontoPro Sidebar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Dasboard_Profissional/src/painel.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="/Dasboard_Profissional/img/Logo + icon.png" alt="Logo OdontoPro" class="logo-small">
+        </div>
+
+        <nav class="nav-menu">
+            <p class="nav-title">Área de Trabalho</p>
+            <ul>
+                <li>
+                    <a href="#" class="nav-link active" data-target="painel">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Painel</span>
+                        <span class="nav-badge">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="agendamento">
+                        <i data-lucide="calendar"></i>
+                        <span>Agendamento</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="pacientes">
+                        <i data-lucide="users"></i>
+                        <span>Meus Pacientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="configuracao">
+                        <i data-lucide="settings"></i>
+                        <span>Configuração</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="download">
+                        <i data-lucide="download"></i>
+                        <span>Download</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="btn-logout">
+                <i data-lucide="log-out"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section id="painel" class="tab-content active">
+            <header class="header">
+                <div class="user-welcome">
+                    <h1>Clinica Lumina</h1>
+                    <p class="breadcrumb">Painel / Gerenciamento</p>
+                </div>
+            </header>
+
+            <section class="dashboard-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Próximas Consultas</h2>
+                        <button class="text-link">Ver todos</button>
+                    </div>
+
+                    <div class="appointments-list">
+                        <div class="appointment-item" onclick="openPreview('Victor Araujo', '09:00 - 09:30 AM')">
+                            <div class="appointment-left">
+                                <img src="https://i.pravatar.cc/150?u=victor" class="avatar">
+                                <div class="info">
+                                    <h3>Victor Araujo</h3>
+                                    <p>Hoje as 09:00 - 09:30 AM</p>
+                                </div>
+                            </div>
+
+                            <div class="appointment-right">
+                                <span class="badge-status">Confirmado</span>
+                                <i data-lucide="chevron-right" class="icon-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-relatorio">
+                    <div class="card-header">
+                        <h2>Relatório</h2>
+                        <i data-lucide="more-horizontal" class="icon-btn-ghost"></i>
+                    </div>
+
+                    <div class="relatorio-content">
+                        <div class="chart-box">
+                            <div class="circular-chart-v2">
+                                <div class="inner-circle">
+                                    <span class="percentage">92%</span>
+                                    <span class="label">Eficiência</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="stats-list">
+                            <li>
+                                <div class="stat-info">
+                                    <span class="dot agendados"></span>
+                                    <span class="stat-name">Agendados</span>
+                                </div>
+                                <span class="stat-value">50</span>
+                            </li>
+                            <li>
+                                <div class="stat-info">
+                                    <span class="dot atendidos"></span>
+                                    <span class="stat-name">Atendidos</span>
+                                </div>
+                                <span class="stat-value">46</span>
+                            </li>
+                            <li>
+                                <div class="stat-info">
+                                    <span class="dot primeira"></span>
+                                    <span class="stat-name">Primeira vez</span>
+                                </div>
+                                <span class="stat-value">05</span>
+                            </li>
+                            <li>
+                                <div class="stat-info">
+                                    <span class="dot faltas"></span>
+                                    <span class="stat-name">Faltas</span>
+                                </div>
+                                <span class="stat-value text-red">04</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="agendamento" class="tab-content">
+                <header class="header">
+                    <div class="user-welcome">
+                        <h1>Agendamento</h1>
+                        <p class="breadcrumb">Gerencie seus horários</p>
+                    </div>
+                </header>
+                <div class="card">
+                    <p>Calendário de consultas vindo em breve...</p>
+                </div>
+            </section>
+
+            <section id="pacientes" class="tab-content">
+                <header class="header">
+                    <div class="user-welcome">
+                        <h1>Meus Pacientes</h1>
+                        <p class="breadcrumb">Base de dados completa</p>
+                    </div>
+                </header>
+                <div class="card">
+                    <p>Lista detalhada de pacientes vindo em breve...</p>
+                </div>
+            </section>
+    </main>
+
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalName">Detalhes</h2>
+            <p id="modalTime"></p>
+            <hr class="modal-divider">
+            <div class="modal-body">
+                <p><strong>Procedimento:</strong> Avaliação Geral</p>
+                <p><strong>Status:</strong> <span class="badge-success">Confirmado</span></p>
+            </div>
+            <button class="btn-primary">Ver Prontuário Completo</button>
+        </div>
+    </div>
+    <script>
+        // Inicializa os ícones
+        lucide.createIcons();
+    </script>
+    <script src="/Dasboard_Profissional/js/painel.js"></script>
+</body>
+
+</html>
