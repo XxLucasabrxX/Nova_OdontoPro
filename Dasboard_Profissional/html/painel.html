@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OdontoPro Sidebar</title>
+    <title>OdontoPro - Painel Profissional</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Dasboard_Profissional/src/painel.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -65,6 +65,7 @@
     </aside>
 
     <main class="main-content">
+        
         <section id="painel" class="tab-content active">
             <header class="header">
                 <div class="user-welcome">
@@ -83,13 +84,12 @@
                     <div class="appointments-list">
                         <div class="appointment-item" onclick="openPreview('Victor Araujo', '09:00 - 09:30 AM')">
                             <div class="appointment-left">
-                                <img src="https://i.pravatar.cc/150?u=victor" class="avatar">
+                                <img src="/Dasboard_Profissional/img/1b5ef428f7403ec9d5a5818de6363ebc.jpg" class="avatar">
                                 <div class="info">
                                     <h3>Victor Araujo</h3>
                                     <p>Hoje as 09:00 - 09:30 AM</p>
                                 </div>
                             </div>
-
                             <div class="appointment-right">
                                 <span class="badge-status">Confirmado</span>
                                 <i data-lucide="chevron-right" class="icon-arrow"></i>
@@ -97,6 +97,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="card card-relatorio">
                     <div class="card-header">
                         <h2>Relatório</h2>
@@ -146,50 +147,85 @@
                     </div>
                 </div>
             </section>
-
-            <section id="agendamento" class="tab-content">
-                <header class="header">
-                    <div class="user-welcome">
-                        <h1>Agendamento</h1>
-                        <p class="breadcrumb">Gerencie seus horários</p>
-                    </div>
-                </header>
-                <div class="card">
-                    <p>Calendário de consultas vindo em breve...</p>
+        </section> <section id="agendamento" class="tab-content">
+            <header class="header">
+                <div class="user-welcome">
+                    <h1>Agendamento</h1>
+                    <p class="breadcrumb">Gerencie seus horários</p>
                 </div>
-            </section>
+            </header>
+            <div class="card">
+                <p>O calendário de consultas será implementado aqui.</p>
+            </div>
+        </section>
 
-            <section id="pacientes" class="tab-content">
-                <header class="header">
-                    <div class="user-welcome">
-                        <h1>Meus Pacientes</h1>
-                        <p class="breadcrumb">Base de dados completa</p>
-                    </div>
-                </header>
-                <div class="card">
-                    <p>Lista detalhada de pacientes vindo em breve...</p>
+        <section id="pacientes" class="tab-content">
+            <header class="header">
+                <div class="user-welcome">
+                    <h1>Meus Pacientes</h1>
+                    <p class="breadcrumb">Base de dados completa</p>
                 </div>
-            </section>
+            </header>
+            <div class="card">
+                <p>Lista detalhada de pacientes vindo em breve...</p>
+            </div>
+        </section>
+
     </main>
 
     <div id="previewModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modalName">Detalhes</h2>
-            <p id="modalTime"></p>
-            <hr class="modal-divider">
-            <div class="modal-body">
-                <p><strong>Procedimento:</strong> Avaliação Geral</p>
-                <p><strong>Status:</strong> <span class="badge-success">Confirmado</span></p>
+    <div class="modal-content">
+        <header class="modal-header">
+            <div class="patient-info-summary">
+                <img src="/Dasboard_Profissional/img/1b5ef428f7403ec9d5a5818de6363ebc.jpg" id="modalAvatar" class="avatar-large" alt="Foto do Paciente">
+                <div>
+                    <h2 id="modalName">Nome do Paciente</h2>
+                    <p id="modalTime" class="time-label"></p>
+                </div>
             </div>
-            <button class="btn-primary">Ver Prontuário Completo</button>
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+        </header>
+
+        <div class="modal-body">
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>Procedimento</label>
+                    <p>Avaliação Geral + Limpeza</p>
+                </div>
+                <div class="info-item">
+                    <label>Convênio</label>
+                    <p>Unimed Odonto</p>
+                </div>
+                <div class="info-item">
+                    <label>Telefone</label>
+                    <p>(11) 99999-8888</p>
+                </div>
+                <div class="info-item">
+                    <label>Status</label>
+                    <span class="badge-success">Confirmado</span>
+                </div>
+            </div>
+
+            <div class="modal-notes">
+                <label>Observações</label>
+                <p>Paciente relatou sensibilidade no molar superior direito na última consulta.</p>
+            </div>
         </div>
+
+        <footer class="modal-footer">
+            <button class="btn-outline" onclick="closeModal()">Fechar</button>
+            <button class="btn-primary">
+                <i data-lucide="file-text"></i> Abrir Prontuário
+            </button>
+        </footer>
     </div>
+</div>
+
+    <script src="/Dasboard_Profissional/js/painel.js"></script>
     <script>
-        // Inicializa os ícones
+        // Inicializa os ícones após o carregamento
         lucide.createIcons();
     </script>
-    <script src="/Dasboard_Profissional/js/painel.js"></script>
 </body>
 
 </html>
