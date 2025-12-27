@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OdontoPro - Sistema de Gerenciamento</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/Login_e_Cadastro/src/clinica.css">
+</head>
+<body>
+    <div class="container-principal">
+        
+        <aside class="coluna-imagem">
+            <img src="/img/Foto Login Profissional.png" alt="Profissional de Odontologia">
+        </aside>
+
+        <main class="coluna-login">
+            <div class="conteudo-login">
+                
+                <header class="logo-container">
+                    <img src="/img/Logo + icon.png" alt="Logo OdontoPro" class="logo-icone">
+                </header>
+
+                <section class="boas-vindas">
+                    <h2>Faça Login com sua Conta</h2>
+                </section>
+
+                <form action="#">
+                    <div class="campo-input">
+                        <label for="usuario">E-mail ou CNPJ</label>
+                        <input type="text" id="usuario" placeholder="Digite seu e-mail ou CNPJ" required>
+                    </div>
+
+                    <div class="campo-input">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" placeholder="Insira sua senha" required>
+                    </div>
+
+                    <div class="opcoes-extras">
+                        <label class="checkbox-personalizado">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Manter Conectado
+                        </label>
+                        <a href="#" class="link-esqueci">Esqueci minha senha</a>
+                    </div>
+
+                    <button type="submit" class="botao-acessar">Acessar Conta</button>
+
+                    <div class="divisor">
+                        <span>ou</span>
+                    </div>
+
+                    <button type="button" class="botao-google">
+                        <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google" width="18">
+                        Acessar com Google
+                    </button>
+                </form>
+
+                <footer class="rodape-login">
+                    <p>Ainda não tem uma Clínica Cadastrada? <a href="#">Cadastre-se</a></p>
+                </footer>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>
