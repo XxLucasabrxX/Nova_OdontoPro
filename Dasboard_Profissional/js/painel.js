@@ -44,3 +44,33 @@ window.onclick = function(event) {
     const modal = document.getElementById("previewModal");
     if (event.target == modal) closeModal();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Lógica para prévia de imagem (Banner e Avatar)
+    const initPrevia = (inputID, imgID) => {
+        const input = document.getElementById(inputID);
+        const img = document.getElementById(imgID);
+        if(!input || !img) return;
+
+        input.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = e => img.src = e.target.result;
+                reader.readAsDataURL(file);
+            }
+        });
+    };
+
+    initPrevia('upload-banner', 'previa-banner');
+    initPrevia('upload-avatar', 'previa-avatar');
+
+    // Lógica de Salvar (Apenas visual)
+    const formConfig = document.getElementById('formulario-config');
+    if(formConfig) {
+        formConfig.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Configurações atualizadas com sucesso!');
+        });
+    }
+});
