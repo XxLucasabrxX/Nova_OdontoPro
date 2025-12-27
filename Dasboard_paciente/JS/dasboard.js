@@ -286,3 +286,13 @@ function irParaMeusAgendamentos() {
         telaConsultas.style.display = 'block'; // Ou 'flex', dependendo do seu CSS
     };
 };
+
+document.getElementById("btnLogout").addEventListener("click", function(e) {
+    e.preventDefault();
+    
+    // Opcional: Limpar dados de sessão se estiver usando localStorage
+    // localStorage.removeItem('usuario_logado');
+
+    // Redireciona de volta para a tela de login
+    window.location.href = "../../Login_e_Cadastro/html/login.html";
+});
