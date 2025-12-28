@@ -125,7 +125,7 @@ body {
     padding-top: 1.5rem;
 }
 
-.btn-logout {
+.botao-sair {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -135,7 +135,7 @@ body {
     transition: color 0.3s;
 }
 
-.btn-logout:hover {
+.botao-sair:hover {
     color: #E53E3E;
 }
 
