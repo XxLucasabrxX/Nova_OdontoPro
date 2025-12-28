@@ -74,3 +74,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnLogout = document.getElementById('btn-logout');
+
+    if (btnLogout) {
+        btnLogout.addEventListener('click', () => {
+            // Confirmar antes de sair (opcional)
+            const confirmar = confirm("Deseja realmente sair do sistema?");
+            
+            if (confirmar) {
+                // CAMINHO DE VOLTA:
+                // 1. ../ (sai da pasta html do painel)
+                // 2. ../ (sai da pasta Dasboard_Profissional)
+                // 3. Entra em Login_e_Cadastro/html/clinica.html
+                window.location.href = "../../Login_e_Cadastro/html/clinica.html";
+            }
+        });
+    }
+})

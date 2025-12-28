@@ -1,72 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OdontoPro - Sistema de Gerenciamento</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="/Login_e_Cadastro/src/clinica.css">
 </head>
+
 <body>
     <div class="container-principal">
-        
+
         <aside class="coluna-imagem">
             <img src="/img/Foto Login Profissional.png" alt="Profissional de Odontologia">
         </aside>
 
         <main class="coluna-login">
             <div class="conteudo-login">
-                
                 <header class="logo-container">
                     <img src="/img/Logo + icon.png" alt="Logo OdontoPro" class="logo-icone">
                 </header>
 
-                <section class="boas-vindas">
-                    <h2>Faça Login com sua Conta</h2>
+                <section id="secao-login">
+                    <div class="boas-vindas">
+                        <h2>Faça Login com sua Conta</h2>
+                    </div>
+
+                    <form id="form-login">
+                        <div class="campo-input">
+                            <label for="usuario">E-mail ou CNPJ</label>
+                            <input type="text" id="usuario" placeholder="Digite seu e-mail ou CNPJ" required>
+                        </div>
+
+                        <div class="campo-input">
+                            <label for="senha">Senha</label>
+                            <input type="password" id="senha" placeholder="Insira sua senha" required>
+                        </div>
+
+                        <div class="opcoes-extras">
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                Manter Conectado
+                            </label>
+                            <a href="#" class="link-esqueci">Esqueci minha senha</a>
+                        </div>
+
+                        <button type="submit" class="botao-acessar">Acessar Conta</button>
+
+                        <div class="divisor"><span>ou</span></div>
+
+                        <button type="button" class="botao-google">
+                            <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google" width="18">
+                            Acessar com Google
+                        </button>
+                    </form>
+
+                    <footer class="rodape-login">
+                        <p>Ainda não tem uma Clínica Cadastrada? <a href="#" id="link-cadastro">Cadastre-se</a></p>
+                    </footer>
                 </section>
 
-                <form action="#">
-                    <div class="campo-input">
-                        <label for="usuario">E-mail ou CNPJ</label>
-                        <input type="text" id="usuario" placeholder="Digite seu e-mail ou CNPJ" required>
+                <section id="secao-pagamento" class="hidden">
+                    <div class="boas-vindas">
+                        <h2>Assinatura OdontoPro</h2>
+                        <p>Escaneie o QR Code abaixo para ativar sua licença.</p>
                     </div>
-
-                    <div class="campo-input">
-                        <label for="senha">Senha</label>
-                        <input type="password" id="senha" placeholder="Insira sua senha" required>
+                    <div class="area-pix">
+                        <div class="valor-destaque">R$ 149,90/mês</div>
+                        <div class="qr-code-box">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=ChavePixOdontoPro"
+                                alt="QR Code Pix">
+                        </div>
+                        <p class="status-pagamento">Aguardando pagamento...</p>
                     </div>
+                    <button type="button" id="btn-confirmar-pagamento" class="botao-acessar">Já realizei o
+                        pagamento</button>
+                    <button type="button" class="botao-google link-voltar-login">Cancelar e Voltar</button>
+                </section>
 
-                    <div class="opcoes-extras">
-                        <label class="checkbox-personalizado">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                            Manter Conectado
-                        </label>
-                        <a href="#" class="link-esqueci">Esqueci minha senha</a>
+                <section id="secao-sucesso" class="hidden" style="text-align: center;">
+                    <div class="boas-vindas">
+                        <h2>🎉 Pagamento Confirmado!</h2>
+                        <p>Sua clínica foi cadastrada com sucesso.</p>
                     </div>
-
-                    <button type="submit" class="botao-acessar">Acessar Conta</button>
-
-                    <div class="divisor">
-                        <span>ou</span>
-                    </div>
-
-                    <button type="button" class="botao-google">
-                        <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google" width="18">
-                        Acessar com Google
-                    </button>
-                </form>
-
-                <footer class="rodape-login">
-                    <p>Ainda não tem uma Clínica Cadastrada? <a href="#">Cadastre-se</a></p>
-                </footer>
+                    <button onclick="location.reload()" class="botao-acessar">Ir para o Dashboard</button>
+                </section>
             </div>
-        </main>
 
+
+            <div id="modal-esqueci" class="modal-overlay hidden">
+                <div class="modal-content">
+                    <button class="fechar-modal">&times;</button>
+
+                    <div id="etapa-email">
+                        <h3>Recuperar Senha</h3>
+                        <p>Digite seu e-mail para receber um código de verificação.</p>
+                        <div class="campo-input">
+                            <label>E-mail cadastrado</label>
+                            <input type="email" id="recuperar-email" placeholder="exemplo@email.com">
+                        </div>
+                        <button type="button" id="btn-enviar-codigo" class="botao-acessar">Enviar Código</button>
+                    </div>
+
+                    <div id="etapa-codigo" class="hidden">
+                        <h3>Validar Código</h3>
+                        <p>Enviamos um código para o seu e-mail.</p>
+                        <div class="campo-input">
+                            <label>Código de 6 dígitos</label>
+                            <input type="text" id="input-codigo" maxlength="6" placeholder="000000">
+                        </div>
+                        <button type="button" id="btn-validar-codigo" class="botao-acessar">Validar</button>
+                    </div>
+
+                    <div id="etapa-nova-senha" class="hidden">
+                        <h3>Nova Senha</h3>
+                        <p>Crie uma nova senha para sua conta.</p>
+                        <div class="campo-input">
+                            <label>Nova Senha</label>
+                            <input type="password" id="nova-senha" placeholder="Digite a nova senha">
+                        </div>
+                        <button type="button" id="btn-resetar-senha" class="botao-acessar">Redefinir e Logar</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
     </div>
+    <script src="/Login_e_Cadastro/js/clinica.js"></script>
 </body>
+
 </html>
